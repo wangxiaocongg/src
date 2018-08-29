@@ -44,12 +44,23 @@
     function register(){
         //1.获取到用户输入的信息
         const username = $("#usernameId").val()
-        const password = md5($("#passwordId").val())
+        const password = md5($("#passwordId").val()+"!@#ZZZ-_-")
 
+        // console.log(username)
+        // console.log(password)
         //2.发送请求给服务器
+          
         $.post("/account/register",{username,password},function(result){
-            console.log(result)
+            // console.log(2222)
+            if(result.status !== 0){
+               
+                alert(result.message)
+            }else{
+                window.location.href='/account/login';
+            }
         });
+
+        // console.log(result.status)
     }
 </script>
 </html>

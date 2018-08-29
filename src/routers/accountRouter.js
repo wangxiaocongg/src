@@ -20,4 +20,15 @@ accountRouter.get('/login',accountctrl.getLoginPage);
 // 获取注册页面的请求
 accountRouter.get("/register",accountctrl.getRegisterPage)
 
+// 处理注册请求
+accountRouter.post("/register",accountctrl.register);
+
+
+// 获取图片验证码
+accountRouter.get("/vcode",accountctrl.getVcodeImage)
+
+
+// 处理登录
+accountRouter.post('/login',accountctrl.login)
+
 module.exports = accountRouter;
